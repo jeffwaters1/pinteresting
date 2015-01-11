@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Pin ID</th>
       <th>Description</th>
       <th>User Email</th>
@@ -10,9 +11,12 @@
     </tr>
   </thead>
 
+
+
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
+        <td><%= image_tag pin.image.url(:medium) %></td>
         <td><%= pin.id %></td>
         <td><%= pin.description %></td>
         <td><%= pin.user.email if pin.user %></td>
